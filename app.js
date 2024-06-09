@@ -6,8 +6,8 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-const booksRouter = require('./routes/booksRoutes');
-app.use('/books', booksRouter);
+const songsRouter = require('./routes/songsRoutes');
+app.use('/songs', songsRouter);
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,

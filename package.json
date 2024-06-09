@@ -1,7 +1,7 @@
 {
-  "name": "shake-s-peare",
+  "name": "js_musica",
   "version": "1.0.0",
-  "description": "library with shake shop",
+  "description": "more songs with jsmusica",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
