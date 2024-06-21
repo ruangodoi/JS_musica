@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 
 // Rota para obter uma música por ID
 router.get('/:id', getSongs, (req, res) => {
-  res.json(res.songs);
+  res.json(res.Songs);
 });
 
 // Rota para criar uma música informações
@@ -40,29 +40,29 @@ router.post('/', async (req, res) => {
 // Rota para atualizar uma música por ID
 router.put('/:id', getSongs, async (req, res) => {
   if (req.body.title != null) {
-    res.songs.title = req.body.title;
+    res.Songs.title = req.body.title;
   }
   if (req.body.singer != null) {
-    res.songs.singer = req.body.singer;
+    res.Songs.singer = req.body.singer;
   }
   if (req.body.genre != null) {
-    res.songs.genre = req.body.genre;
+    res.Songs.genre = req.body.genre;
   }
   if (req.body.duration != null) {
-    res.songs.duration = req.body.duration;
+    res.Songs.duration = req.body.duration;
   }
   if (req.body.releaseDate != null) {
-    res.songs.releaseDate = req.body.releaseDate;
+    res.Songs.releaseDate = req.body.releaseDate;
   }
   if (req.body.album != null) {
-    res.songs.album = req.body.album;
+    res.Songs.album = req.body.album;
   }
   if (req.body.composerProducer != null) {
-    res.songs.composerProducer = req.body.composerProducer;
+    res.Songs.composerProducer = req.body.composerProducer;
   }
 
   try {
-    const updatedSongs = await res.songs.save();
+    const updatedSongs = await res.Songs.save();
     res.json(updatedSongs);
   } catch (err) {
     res.status(400).json({ message: err.message });
@@ -72,7 +72,7 @@ router.put('/:id', getSongs, async (req, res) => {
 // Rota para excluir uma música por ID
 router.delete('/:id', getSongs, async (req, res) => {
   try {
-    await res.songs.deleteOne();
+    await res.Songs.deleteOne();
     res.json({ message: 'Song deleted sucessfully' });
   } catch (err) {
     res.status(500).json({ message: err.message });
